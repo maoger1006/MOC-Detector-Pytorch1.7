@@ -47,9 +47,10 @@
   [ https://github.com/MatthewHowe/DCNv2](https://github.com/lbin/DCNv2/tree/pytorch_1.7)
 
    ~~~powershell
-   cd ${MOC_ROOT}/src/network/DCNv2
+   cd ${MOC_ROOT}/src/network/DCNv2_py17
    python setup.py build develop
-   - or you must check with https://github.com/CharlesShang/DCNv2.git to make sure that is for you.
+   python testcpu.py
+   python testcuda.py
    ~~~
 
 7. If you have any problems, please check in [CenterNet](https://github.com/xingyizhou/CenterNet/issues).
