@@ -6,9 +6,9 @@
 >
 >**Our experimental environment:** 
 >
-> Ubuntu 18.04,  Python 3.6.9, PyTorch 1.4, torchvision 0.5.0.
+> Ubuntu 20.04,  Python 3.7.16, PyTorch 1.7.1, torchvision 0.8.2.
 >
-> 8 NVIDIA 2080ti cuda10.0
+> NVIDIA 3090
 
 <br/>
 
