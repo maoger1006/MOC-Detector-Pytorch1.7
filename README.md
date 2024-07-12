@@ -1,5 +1,5 @@
 # Actions as Moving Points
-## This repo updated [MOC-Detector](https://github.com/MCG-NJU/MOC-Detector) to pytorch1.4 with cuda10.
+## This repo updated [MOC-Detector](https://github.com/MCG-NJU/MOC-Detector) to pytorch1.7 with cuda11.0.
 
 
 - Please refer to the author for others.
