@@ -43,8 +43,8 @@
    pip install -r requirments.txt -i https://mirrors.aliyun.com/pypi/simple
    ~~~
 
-5. Compile deformable convolutional in DLA backbone using updated DCNv2 for better support to RTX 30xx follow [CenterNet](https://github.com/xingyizhou/CenterNet/blob/master/readme/INSTALL.md).
-   https://github.com/MatthewHowe/DCNv2
+5. Compile deformable convolutional in DLA backbone using updated DCNv2 for to support pytorch 1.7 follow [CenterNet](https://github.com/xingyizhou/CenterNet/blob/master/readme/INSTALL.md).
+  [ https://github.com/MatthewHowe/DCNv2](https://github.com/lbin/DCNv2/tree/pytorch_1.7)
 
    ~~~powershell
    cd ${MOC_ROOT}/src/network/DCNv2
