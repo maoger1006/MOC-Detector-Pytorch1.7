@@ -43,7 +43,7 @@
    pip install -r requirments.txt -i https://mirrors.aliyun.com/pypi/simple
    ~~~
 
-5. Compile deformable convolutional in DLA backbone follow [CenterNet](https://github.com/xingyizhou/CenterNet/blob/master/readme/INSTALL.md).
+5. Compile deformable convolutional in DLA backbone using updated DCNv2 for better support to RTX 30xx follow [CenterNet](https://github.com/xingyizhou/CenterNet/blob/master/readme/INSTALL.md).
    https://github.com/MatthewHowe/DCNv2
 
    ~~~powershell
