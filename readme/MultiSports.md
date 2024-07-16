@@ -7,4 +7,13 @@ Firstly, download the dataset and groundtruths from [here](https://huggingface.c
 ```powershell
 python3 process_videos.py
 ```
+<br/>
 
+```shell
+${MOC_ROOT}
+|-- data
+`-- |-- MultiSports
+    `-- |-- Frames
+    `-- |-- FlowBrox04(optional)
+    `-- |-- MultiSports-GT.pkl
+```
