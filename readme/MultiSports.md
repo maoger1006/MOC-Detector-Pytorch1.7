@@ -24,4 +24,10 @@ ${MOC_ROOT}
 python train.py --K 7 --exp_id Train_K7_rgb_coco_multi_s1 --rgb_model ../experiment/MultiSports/rgb_model --batch_size 2 --master_batch 2 --lr 5e-4 --gpus 0 --num_workers 1 --num_epochs 1 --lr_step 6,8 --dataset multisports --split 1
 ```
 
+## Evaluation
+
+```powershell
+
+```
+
 
