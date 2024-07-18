@@ -19,15 +19,21 @@ ${MOC_ROOT}
     `-- |-- MultiSports-GT.pkl
 ```
 
+   
 ## Train 
+MultiSports dataset is very large, only basketball subclass is used for my scenario. Before training and evaluation, you need to filter them out in `base_dataset.py` and `normal_inference.py`
 ```powershell
 python train.py --K 7 --exp_id Train_K7_rgb_coco_multi_s1 --rgb_model ../experiment/MultiSports/rgb_model --batch_size 2 --master_batch 2 --lr 5e-4 --gpus 0 --num_workers 1 --num_epochs 1 --lr_step 6,8 --dataset multisports --split 1
 ```
 
 ## Evaluation
 
-```powershell
+In the `normal_inference.py` 
 
+
+```powershell
+python det.py --task normal --K 7 --gpus 0 --batch_size 1 --master_batch 1 --num_workers 2 --rgb_model ../experiment/MultiSports/rgb_model/model_last.pth --inference_dir ~data/mmy/MOC/data0/basketball_test --flip_test --ninput 5 --dataset multisports 
 ```
+I only trained RGB model for Multisports, so in the evaluation, just use rgb_model, otherwise will occur weights and bias mismatch problem.
 
 
