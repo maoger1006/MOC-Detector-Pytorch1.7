@@ -21,17 +21,24 @@ ${MOC_ROOT}
 
    
 ## Train 
-MultiSports dataset is very large, only basketball subclass is used for my scenario. Before training and evaluation, you need to filter them out in `base_dataset.py` and `normal_inference.py`. 
+MultiSports dataset is very large, only basketball subclass is used for my scenario. Before training and evaluation, you need to filter them out in `base_dataset.py`, `normal_inference.py`, `ACT.py`.   
 
 Width and length of images are resized, so the bounding box values need to be modified when reading in the `ACT.py`, `base_dataset.py`
 ```powershell
 python train.py --K 7 --exp_id Train_K7_rgb_coco_multi_s1 --rgb_model ../experiment/MultiSports/rgb_model --batch_size 2 --master_batch 2 --lr 5e-4 --gpus 0 --num_workers 1 --num_epochs 1 --lr_step 6,8 --dataset multisports --split 1
 ```
+```powershell
+python train.py --K 7 --exp_id Train_K7_rgb_coco_multi_s1 --rgb_model ../experiment/Multisports_0718/rgb_model --batch_size 2 --master_batch 2 --lr 5e-4 --gpus 0 --num_workers 1 --num_epochs 2 --lr_step 6,8 --dataset multisports --split 1 --load_model ../experiment/MultiSports/rgb__model/model_last.pth --start_epoch 1
+```
+## Inference
 
+we just trained rgb model. 
+```powershell
+python det.py --task normal --K 7 --gpus 0 --batch_size 1 --master_batch 1 --num_workers 2 --rgb_model ../experiment/Multisports_0718/rgb_model/model_last.pth  --inference_dir ../data0/basketball_test_1
+```
 ## Evaluation
 
 In the `normal_inference.py` 
-
 
 ```powershell
 python det.py --task normal --K 7 --gpus 0 --batch_size 1 --master_batch 1 --num_workers 2 --rgb_model ../experiment/MultiSports/rgb_model/model_last.pth --inference_dir ~data/mmy/MOC/data0/basketball_test --flip_test --ninput 5 --dataset multisports 
