@@ -51,6 +51,16 @@ In the `normal_inference.py`
 python ACT.py --task BuildTubes --K 11 --inference_dir ../data0/basketball_test_3_epoch4
 ```
 
+For video mAP,  build tubes first:
+```powershell
+python ACT.py --task BuildTubes --K 11 --inference_dir ../data0/basketball_test_3_epoch4
+```
+
+Then, compute video mAP:
+```powershell
+python ACT.py --task videoAP --K 7 --th 0.2 --inference_dir $INFERENCE_DIR
+```
+
 I only trained RGB model for Multisports, so in the evaluation, just use rgb_model, otherwise will occur weights and bias mismatch problem.
 
 
