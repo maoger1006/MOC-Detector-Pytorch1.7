@@ -30,20 +30,27 @@ python train.py --K 7 --exp_id Train_K7_rgb_coco_multi_s1 --rgb_model ../experim
 ```powershell
 python train.py --K 7 --exp_id Train_K7_rgb_coco_multi_s1 --rgb_model ../experiment/Multisports_0718/rgb_model --batch_size 2 --master_batch 2 --lr 5e-4 --gpus 0 --num_workers 1 --num_epochs 2 --lr_step 6,8 --dataset multisports --split 1 --load_model ../experiment/MultiSports/rgb__model/model_last.pth --start_epoch 1
 ```
+
 ## Inference
 
 we just trained rgb model. 
 ```powershell
 python det.py --task normal --K 7 --gpus 0 --batch_size 1 --master_batch 1 --num_workers 2 --rgb_model ../experiment/Multisports_0718/rgb_model/model_last.pth  --inference_dir ../data0/basketball_test_1
 ```
+
+```powershell
+python det.py --task normal --K 7 --gpus 0 --batch_size 1 --master_batch 1 --num_workers 2 --rgb_model ../experiment/MultiSports/rgb_model/model_last.pth --inference_dir ~data/mmy/MOC/data0/basketball_test --flip_test --ninput 5 --dataset multisports 
+```
+
 ## Evaluation
 
 'ACT.py', in the frameAP, the input bbox coordinates are resized as well.  
 In the `normal_inference.py`
 
 ```powershell
-python det.py --task normal --K 7 --gpus 0 --batch_size 1 --master_batch 1 --num_workers 2 --rgb_model ../experiment/MultiSports/rgb_model/model_last.pth --inference_dir ~data/mmy/MOC/data0/basketball_test --flip_test --ninput 5 --dataset multisports 
+python ACT.py --task BuildTubes --K 11 --inference_dir ../data0/basketball_test_3_epoch4
 ```
+
 I only trained RGB model for Multisports, so in the evaluation, just use rgb_model, otherwise will occur weights and bias mismatch problem.
 
 
